@@ -22,6 +22,8 @@ To get started developing right away:
 * Sony Xperia XZP - Android 8.0
 
 # Screenshots
-![Imgur](https://i.imgur.com/gkQKNCv.png)![Imgur](https://i.imgur.com/xigO7Jy.png)
-![Imgur](https://i.imgur.com/2zTHEp1.png)![Imgur](https://i.imgur.com/UKU1KeE.png)
-![Imgur](https://i.imgur.com/7P5JGpp.png)![Imgur](https://i.imgur.com/BHsfXu7.png)
+|iOS|Android|
+|---|-------|
+|![Imgur](https://i.imgur.com/gkQKNCv.png)|![Imgur](https://i.imgur.com/xigO7Jy.png)|
+|![Imgur](https://i.imgur.com/2zTHEp1.png)|![Imgur](https://i.imgur.com/UKU1KeE.png)|
+|![Imgur](https://i.imgur.com/7P5JGpp.png)|![Imgur](https://i.imgur.com/BHsfXu7.png)|
