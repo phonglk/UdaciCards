@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { Container, Header, Content, Button, Item, Input} from 'native-base';
 import { addDeck } from '../actions';
-
+import { NavigationActions } from 'react-navigation';
 
 class NewDeck extends PureComponent {
   state = {
@@ -14,6 +14,14 @@ class NewDeck extends PureComponent {
     const { title } = this.state;
     const deck = { title };
     this.props.addDeck(deck);
+    const navAction = NavigationActions.reset({
+      index: 1,
+      actions: [
+        NavigationActions.navigate({ routeName: 'Home', action: NavigationActions.navigate({ 'routeName': 'Decks' }) }),
+        NavigationActions.navigate({ routeName: 'Deck', params: { deck: { id: 'latest' } }}),
+      ]
+    });
+    this.props.navigation.dispatch(navAction);
   }
 
   render() {

@@ -13,11 +13,15 @@ export function loadFromStorage(storage) {
   }
 }
 
-export function addDeck(deck) {
-  return {
+export const addDeck = (deck) => (dispatch, getStore) => {
+  const lastId = getStore().deck.lastId;
+  dispatch({
     type: ADD_DECK,
-    deck,
-  }
+    deck: {
+      ...deck,
+      id: lastId+1,
+    },
+  })
 }
 
 export function removeDeck(deck) {
@@ -27,12 +31,16 @@ export function removeDeck(deck) {
   }
 }
 
-export function addCardToDeck(card, deck) {
-  return {
+export const addCardToDeck = (card, deck) => (dispatch, getStore) => {
+  const lastId = getStore().card.lastId;
+  dispatch({
     type: ADD_CARD_TO_DESK,
-    card,
+    card: {
+      ...card,
+      id: lastId + 1,
+    },
     deck,
-  }
+  })
 }
 
 export function removeCardFromDeck(card, deck) {

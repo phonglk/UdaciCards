@@ -1,0 +1,1 @@
+export const isNullOrBlank = (v) => v === null || (v.trim && v.trim() === '');
