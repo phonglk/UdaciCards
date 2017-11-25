@@ -13,6 +13,7 @@ import Decks from './views/Decks';
 import NewDeck from './views/NewDeck';
 
 import { purple, black, white } from './utils/colors';
+import { setNotification } from './utils';
 
 import { initStore } from './store';
 
@@ -115,6 +116,9 @@ export default class App extends React.Component {
     } catch (e) {
       this.setState({ error: e.message });
     }
+  }
+  componentDidMount() {
+    setNotification();
   }
   componentWillUnmount() {
     this.unmountStore();

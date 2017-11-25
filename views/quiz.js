@@ -6,8 +6,8 @@ import { white, purple } from '../utils/colors';
 import { isNullOrBlank } from '../utils';
 import { addCardToDeck } from '../actions';
 import QuizCard from '../components/QuizCard';
-
-const QuizReport = ({ score, onPressReset }) => (
+// Add back to deck
+const QuizReport = ({ score, onPressReset, onPressBack }) => (
   <View style={{flex: 1}}>
     <View style={{flex: 1, justifyContent: 'center'}}>
       <View style={{ alignItems: 'center' }}>
@@ -19,11 +19,17 @@ const QuizReport = ({ score, onPressReset }) => (
       flex: 0,
       justifyContent: 'flex-end',
     }}>
-      <Button block onPress={onPressReset}>
+      <Button block success onPress={onPressReset}>
         <Text style={{
           color: white,
           fontSize: 16,
         }}>Retake the Quiz!</Text>
+      </Button>
+      <Button block style={{marginTop: 10}} onPress={onPressBack}>
+        <Text style={{
+          color: white,
+          fontSize: 16,
+        }}>Back to the Deck</Text>
       </Button>
     </View>
   </View>
@@ -74,7 +80,11 @@ class Quiz extends PureComponent {
     return (
       <View style={styles.container}>
         {isComplete
-          ? <QuizReport score={score} onPressReset={this.onPressReset} />
+          ? <QuizReport
+              score={score}
+              onPressReset={this.onPressReset}
+              onPressBack={() => this.props.navigation.goBack()}
+            />
           : <QuizCard
               card={card}
               progress={progress + 1}
