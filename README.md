@@ -1,4 +1,4 @@
-# MyReads
+# UdaciCards
 
 UdaciCards is a flashcard mobile application, which help you add your own flash cards. This application is developed using React Native and compatible on both iOS and Android, you can try this application by installing Expo App then go to https://expo.io/@phonglk/udacicards for installation . This project is a part of udacity's nano degree.
 
